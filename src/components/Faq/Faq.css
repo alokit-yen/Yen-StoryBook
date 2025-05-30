@@ -1,0 +1,30 @@
+.faq {
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 16px;
+  margin: 8px 0;
+}
+
+.faq-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.faq-header h3 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.faq-toggle {
+  font-size: 20px;
+  font-weight: bold;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.faq-answer {
+  margin-top: 8px;
+  color: #555;
+}

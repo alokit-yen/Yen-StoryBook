@@ -2,10 +2,12 @@
 
 // .storybook/main.js
 const config = {
-  stories: ["../src/**/*.stories.@(js|jsx|ts|tsx)"],
-  addons: [
-    "@storybook/addon-essentials",
-    "@storybook/addon-onboarding",
+  "stories": [
+    "../src/**/*.mdx",
+    "../src/**/*.stories.@(js|jsx|mjs|ts|tsx)"
+  ],
+  "addons": [
+    "@storybook/addon-onboarding", '@storybook/addon-essentials'
   ],
   framework: {
     name: "@storybook/react-vite",
