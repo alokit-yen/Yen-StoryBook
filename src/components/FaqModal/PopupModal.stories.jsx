@@ -11,6 +11,13 @@ export default {
       },
     },
   },
+  decorators: [
+    (Story) => (
+      <div style={{ minHeight: '100vh', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+        <Story />
+      </div>
+    ),
+  ],
 };
 
 export const Default = {
