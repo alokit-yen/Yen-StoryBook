@@ -4,7 +4,8 @@ import Card from './Card';
 
 export default {
   title: 'ALOKIT/Card',
-  component: Card,
+  component: Card, 
+  tags: ['autodocs'],  
 };
 
 const Template = (args) => <Card {...args} />;

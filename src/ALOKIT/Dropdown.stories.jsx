@@ -4,6 +4,7 @@ import Dropdown from './Dropdown';
 export default {
   title: 'ALOKIT/Dropdown',
   component: Dropdown,
+  tags: ['autodocs'], 
 };
 
 const Template = (args) => <Dropdown {...args} />;

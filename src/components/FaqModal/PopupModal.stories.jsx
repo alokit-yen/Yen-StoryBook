@@ -3,6 +3,7 @@ import PopupModal from './PopupModal';
 export default {
   title: 'RajKamal/PopupModal',
   component: PopupModal,
+  tags: ['autodocs'],
   parameters: {
     docs: {
       source: {

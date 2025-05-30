@@ -4,6 +4,7 @@ import Faq from './Faq';
 export default {
   title: 'RajKamal/Faq',
   component: Faq,
+  tags: ['autodocs'],
   parameters: {
     docs: {
       source: {

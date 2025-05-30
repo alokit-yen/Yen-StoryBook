@@ -4,6 +4,7 @@ import Input from './Input';
 export default {
   title: 'ALOKIT/Input',
   component: Input,
+  tags: ['autodocs'], 
 };
 
 const Template = (args) => {
