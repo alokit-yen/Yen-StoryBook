@@ -12,6 +12,7 @@
   cursor: pointer;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   width: 200px;
 }
 
@@ -35,8 +36,28 @@
 .dropdown-item {
   padding: 10px 16px;
   cursor: pointer;
+  display: flex;
+  align-items: center;
 }
 
 .dropdown-item:hover {
+  background-color: #f9fafb;
+}
+
+.dropdown-icon {
+  margin-right: 8px;
+  display: inline-flex;
+  align-items: center;
+}
+
+.dropdown-group {
+  padding: 4px 0;
+}
+
+.dropdown-group-label {
+  font-size: 12px;
+  font-weight: bold;
+  padding: 4px 16px;
+  color: #6b7280; /* Tailwind's gray-500 */
   background-color: #f9fafb;
 }
