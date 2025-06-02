@@ -1,4 +1,3 @@
-import React from 'react';
 import Spinner from './Spinner';
 
 export default {
@@ -6,27 +5,26 @@ export default {
   component: Spinner,
   tags: ['autodocs'],
   argTypes: {
+    type: {
+      control: 'select',
+      options: ['default', 'dots', 'bars'],
+    },
     size: {
-      control: { type: 'number', min: 10, max: 200, step: 1 },
-      description: 'The width and height of the spinner in pixels',
+      control: 'number',
     },
     color: {
-      control: { type: 'color' },
-      description: 'The spinner’s rotating arc color',
+      control: 'color',
     },
   },
 };
 
-const Template = (args) => <Spinner {...args} />;
+const Template = ({ type, size, color }) => (
+  <Spinner type={type} size={size} color={color} />
+);
 
-export const Default = Template.bind({});
-Default.parameters = {
-  docs: {
-    source: {
-      code: `<Spinner size={48} color="#6366f1" />`,
-      language: 'jsx',
-    },
-  },
+export const Playground = Template.bind({});
+Playground.args = {
+  type: 'default',
+  size: 40,
+  color: '#4f46e5',
 };
-
-
