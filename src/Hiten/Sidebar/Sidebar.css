@@ -10,7 +10,7 @@
   z-index: 1000;
   display: flex;
   flex-direction: column;
-  background: linear-gradient(135deg, #4f46e5, #3b82f6);
+  background: linear-gradient(135deg, #65ade1, #4f86e0);
   border-radius: 0 10px 10px 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -58,11 +58,11 @@
 
 .logout-btn {
   margin-top: auto;
-  color: #f87171;
+  color: #b60505;
 }
 
 .logout-btn:hover {
   background-color: rgba(248, 113, 113, 0.25);
-  color: #fca5a5;
-  box-shadow: inset 3px 0 0 0 #f87171;
+  color: #b60505;
+  box-shadow: inset 3px 0 0 0 #ec2323;
 }
