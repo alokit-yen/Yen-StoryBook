@@ -1,0 +1,36 @@
+/* Carousel.css */
+@import url('slick-carousel/slick/slick.css');
+@import url('slick-carousel/slick/slick-theme.css');
+
+
+.carousel-slide {
+  padding: 20px;
+  text-align: center;
+}
+
+.carousel-image {
+  width: 100%;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.carousel-card {
+  background-color: #fff;
+  padding: 16px;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.carousel-testimonial {
+  background-color: #f9f9f9;
+  padding: 24px;
+  border-radius: 12px;
+  font-style: italic;
+}
+
+.carousel-testimonial .author {
+  margin-top: 12px;
+  font-weight: bold;
+  color: #555;
+}
