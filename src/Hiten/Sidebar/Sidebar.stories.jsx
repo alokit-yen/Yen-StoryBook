@@ -1,6 +1,5 @@
-import React from 'react';
 import Sidebar from './Sidebar';
-import { MemoryRouter } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
 
 export default {
   title: 'Hiten/Sidebar',
@@ -8,68 +7,34 @@ export default {
   tags: ['autodocs'],
   decorators: [
     (Story) => (
-      <MemoryRouter initialEntries={['/']}>
-        <div style={{height: "600px"}}>
-          <Story />
-        </div>
-
-      </MemoryRouter>
+      <BrowserRouter>
+      <div style={{height: '100vh'}}>
+        <Story />
+      </div>
+      </BrowserRouter>
     ),
   ],
   argTypes: {
-    width: {
-      control: { type: 'number', min: 100, max: 600, step: 10 },
-      description: 'Width of the sidebar in pixels',
-    },
-    background: {
-      control: 'color',
-      description: 'Background color of the sidebar',
-      table: { disable: true },
-    },
+    heading: { control: 'text' },
+    width: { control: 'text' },
     position: {
-      control: { type: 'radio' },
+      control: 'select',
       options: ['left', 'right'],
-      description: 'Sidebar position on the screen',
     },
     navItems: {
-      control: false,
-      description: 'Array of navigation items with labels',
+      control: 'array',
     },
   },
 };
 
-const navItemsExample = [
-  { label: 'Home' },
-  { label: 'Profile' },
-  { label: 'Settings' },
-  { label: 'Logout' },
-];
+const Template = ({ heading, width, position, navItems }) => (
+  <Sidebar heading={heading} width={width} position={position} navItems={navItems} />
+);
 
-const Template = (args) => <Sidebar {...args} />;
-
-export const Default = Template.bind({});
-Default.args = {
-  width: 280,
+export const Playground = Template.bind({});
+Playground.args = {
+  heading: 'My App',
+  width: '240px',
   position: 'left',
-  navItems: navItemsExample,
-};
-
-Default.parameters = {
-  docs: {
-    source: {
-      code: `
-<Sidebar
-  width={280}
-  position="left"
-  navItems={[
-    { label: 'Home' },
-    { label: 'Profile' },
-    { label: 'Settings' },
-    { label: 'Logout' },
-  ]}
-/>
-      `.trim(),
-      language: 'jsx',
-    },
-  },
+  navItems: ['Home', 'Profile', 'Settings', 'Logout'],
 };
