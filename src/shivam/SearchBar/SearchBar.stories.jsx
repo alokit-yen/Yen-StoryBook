@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import SearchBar from "./SearchBar";
 import "./SearchBar.css";
+import { Search } from "lucide-react";
 
 export default {
   title: "shivam/SearchBar",
@@ -9,7 +10,8 @@ export default {
   parameters: {
     docs: {
       description: {
-        component: "A reusable SearchBar component with support for three variants: Primary, Outline, and Clearable.",
+        component:
+          "A customizable SearchBar component supporting multiple styles including Primary, Outline, Clearable, Rounded with Icon, Focused highlight, and Custom colors/placeholders.",
       },
     },
   },
@@ -74,7 +76,33 @@ Clearable.storyName = "With Clear Button";
 Clearable.parameters = {
   docs: {
     description: {
-      story: "This variant includes a clear button (×) to reset the input quickly.",
+      story: "Clearable variant includes a × button to reset the input field.",
     },
   },
 };
+
+// 4. Rounded with Search Icon
+export const RoundedWithIcon = () => {
+  const [value, setValue] = useState("");
+  return (
+    <div className="searchbar searchbar-rounded">
+      <span className="search-icon"><Search size={20} /></span>
+      <input
+        className="search-input"
+        placeholder="Search anything..."
+        value={value}
+        onChange={(e) => setValue(e.target.value)}
+      />
+    </div>
+  );
+};
+RoundedWithIcon.storyName = "Rounded with Icon";
+RoundedWithIcon.parameters = {
+  docs: {
+    description: {
+      story: "Rounded input with a left-aligned search icon inside the input box.",
+    },
+  },
+};
+
+
