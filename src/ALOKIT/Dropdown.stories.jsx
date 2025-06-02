@@ -15,7 +15,7 @@ export default {
           justifyContent: 'flex-start',
           alignItems: 'flex-start',
           overflow: 'visible',
-          backgroundColor: '#f9f9f9',
+          backgroundColor: '#f9f9f9', 
         }}
       >
         <Story />
@@ -30,8 +30,8 @@ export const Default = Template.bind({});
 Default.args = {
   label: 'Select an option',
   options: [
-    { label: 'Option A', value: 'option-a' },
-    { label: 'Option B', value: 'option-b' },
+    { label: 'Option A', value: 'option-A' },
+    { label: 'Option B', value: 'option-B' },
     { label: 'Option C', value: 'option-c' },
     { label: 'Option D', value: 'option-d' },
   ],
@@ -43,36 +43,10 @@ Default.parameters = {
       code: `<Dropdown
   label="Select an option"
   options={[
-    { label: 'Option A', value: 'option-a' },
-    { label: 'Option B', value: 'option-b' },
-    { label: 'Option C', value: 'option-c' },
-    { label: 'Option D', value: 'option-d' },
-  ]}
-  onSelect={(option) => alert(\`Selected: \${option.value}\`)}
-/>`,
-    },
-  },
-};
-
-export const WithIcons = Template.bind({});
-WithIcons.args = {
-  label: 'Menu',
-  options: [
-    { label: '📄 Profile', value: 'profile' },
-    { label: '⚙️ Settings', value: 'settings' },
-    { label: '🔓 Logout', value: 'logout' },
-  ],
-  onSelect: (option) => alert(`Selected: ${option.value}`),
-};
-WithIcons.parameters = {
-  docs: {
-    source: {
-      code: `<Dropdown
-  label="Menu"
-  options={[
-    { label: '📄 Profile', value: 'profile' },
-    { label: '⚙️ Settings', value: 'settings' },
-    { label: '🔓 Logout', value: 'logout' },
+    { label: 'Intern-1', value: 'ALOKIT' },
+    { label: 'Intern-2', value: 'HITEN' },
+    { label: 'Intern-3', value: 'RAJKAMAL' },
+    { label: 'Intern-4', value: 'SHIVAM' },
   ]}
   onSelect={(option) => alert(\`Selected: \${option.value}\`)}
 />`,

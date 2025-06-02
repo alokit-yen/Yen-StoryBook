@@ -1,0 +1,66 @@
+/* Container for the progress bar */
+.progress-bar-container {
+  width: 100%;
+  height: 12px;
+  background: linear-gradient(90deg, #e0e7ef 0%, #f3f4f6 100%);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 50;
+  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.08);
+  border-radius: 0 0 8px 8px;
+  overflow: hidden;
+}
+
+/* The animated fill of the progress bar */
+.progress-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #3b82f6 0%, #6366f1 100%);
+  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.15);
+  transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 0 0 8px 8px;
+  position: relative;
+  overflow: visible;
+}
+
+/* Animated stripes to show ongoing progress */
+.progress-bar-fill::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background: repeating-linear-gradient(
+    135deg,
+    rgba(255,255,255,0.15) 0px,
+    rgba(255,255,255,0.15) 12px,
+    transparent 12px,
+    transparent 24px
+  );
+  animation: progress-stripes 1s linear infinite;
+  pointer-events: none;
+  border-radius: 0 0 8px 8px;
+}
+
+/* Optional: Add a subtle glow at the end of the bar */
+.progress-bar-fill::after {
+  content: "";
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 18px;
+  background: radial-gradient(circle at right, #a5b4fc 0%, transparent 80%);
+  pointer-events: none;
+}
+
+@keyframes progress-stripes {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 24px 0;
+  }
+}
