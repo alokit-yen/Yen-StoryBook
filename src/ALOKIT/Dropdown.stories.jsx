@@ -30,10 +30,10 @@ export const Default = Template.bind({});
 Default.args = {
   label: 'Select an option',
   options: [
-    { label: 'Option A', value: 'option-a' },
-    { label: 'Option B', value: 'option-b' },
-    { label: 'Option C', value: 'option-c' },
-    { label: 'Option D', value: 'option-d' },
+    { label: 'Option A', value: 'Option-A' },
+    { label: 'Option B', value: 'Option-B' },
+    { label: 'Option C', value: 'Option-C' },
+    { label: 'Option D', value: 'Option-D' },
   ],
   onSelect: (option) => alert(`Selected: ${option.value}`),
 };
@@ -43,10 +43,10 @@ Default.parameters = {
       code: `<Dropdown
   label="Select an option"
   options={[
-    { label: 'Option A', value: 'option-a' },
-    { label: 'Option B', value: 'option-b' },
-    { label: 'Option C', value: 'option-c' },
-    { label: 'Option D', value: 'option-d' },
+    { label: 'Option A', value: 'Option-A' },
+    { label: 'Option B', value: 'Option-B' },
+    { label: 'Option C', value: 'Option-C' },
+    { label: 'Option D', value: 'Option-D' },
   ]}
   onSelect={(option) => alert(\`Selected: \${option.value}\`)}
 />`,
