@@ -32,8 +32,8 @@ Default.args = {
   options: [
     { label: 'Option A', value: 'option-A' },
     { label: 'Option B', value: 'option-B' },
-    { label: 'Option C', value: 'option-c' },
-    { label: 'Option D', value: 'option-d' },
+    { label: 'Option C', value: 'option-C' },
+    { label: 'Option D', value: 'option-D' },
   ],
   onSelect: (option) => alert(`Selected: ${option.value}`),
 };
