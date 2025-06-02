@@ -14,6 +14,7 @@ export default {
     },
     items: {
       description: 'List of items to display in the carousel',
+      control: 'object',
     },
   },
   parameters: {
@@ -41,8 +42,20 @@ ImageCarousel.args = {
 };
 ImageCarousel.parameters = {
   docs: {
-    description: {
-      story: 'An editable image carousel with photos from Picsum.photos. Change URLs and alt texts in controls.',
+    source: {
+      language: 'jsx',
+      code: `
+<Carousel
+  type="image"
+  items={[
+    { src: 'https://picsum.photos/id/1018/800/400', alt: 'Mountain View' },
+    { src: 'https://picsum.photos/id/1015/800/400', alt: 'Forest Path' },
+    { src: 'https://picsum.photos/id/1019/800/400', alt: 'Lake View' },
+    { src: 'https://picsum.photos/id/1011/800/400', alt: 'City View' },
+    { src: 'https://picsum.photos/id/1016/800/400', alt: 'Desert Landscape' },
+  ]}
+/>
+      `.trim(),
     },
   },
 };
@@ -59,8 +72,19 @@ CardCarousel.args = {
 };
 CardCarousel.parameters = {
   docs: {
-    description: {
-      story: 'A card-based carousel useful for showing feature highlights.',
+    source: {
+      language: 'jsx',
+      code: `
+<Carousel
+  type="card"
+  items={[
+    { title: 'Analytics', description: 'Track your business metrics in real time.' },
+    { title: 'Team Management', description: 'Collaborate and manage projects easily.' },
+    { title: 'Reports', description: 'Generate detailed performance reports.' },
+    { title: 'Integrations', description: 'Works with your existing tools.' },
+  ]}
+/>
+      `.trim(),
     },
   },
 };
@@ -85,8 +109,27 @@ TestimonialCarousel.args = {
 };
 TestimonialCarousel.parameters = {
   docs: {
-    description: {
-      story: 'A rotating carousel for client testimonials with quotes and authors.',
+    source: {
+      language: 'jsx',
+      code: `
+<Carousel
+  type="testimonial"
+  items={[
+    {
+      quote: 'This platform revolutionized our workflow!',
+      author: 'Sara Kim, Operations Lead',
+    },
+    {
+      quote: 'Fantastic UI and support. Highly recommended.',
+      author: 'Daniel Rivera, Product Manager',
+    },
+    {
+      quote: 'A must-have for startups—it just works.',
+      author: 'Leila Hassan, Founder @ BuildWell',
+    },
+  ]}
+/>
+      `.trim(),
     },
   },
 };
