@@ -1,58 +1,51 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
 import './Sidebar.css';
+import { useNavigate } from 'react-router-dom';
 
-const Sidebar = ({
-  width = 240,
-  background = '#1f2937',
-  position = 'left',
-  navItems = [
-    { label: 'Home' },
-    { label: 'Profile' },
-    { label: 'Settings' },
-    { label: 'Logout' },
-  ],
-}) => {
+const Sidebar = ({ heading = 'My App', navItems = [], width = '220px', position = 'left' }) => {
   const navigate = useNavigate();
 
-  const style = {
-    width,
-    backgroundColor: background,
-    [position]: 0,
-  };
-
-  const handleClick = (label) => {
-    // Lowercase and remove spaces for path
-    let path = '/' + label.toLowerCase().replace(/\s+/g, '');
-
-    if (label.toLowerCase() === 'logout') {
-      // Handle logout differently if needed
-      // For demo, redirect to '/'
-      path = '/';
-      // You could also clear auth here
-    }
-
+  const handleNavigation = (path) => {
     navigate(path);
   };
 
+  // Split logout from other nav items
+  const nonLogoutItems = navItems.filter(item => item.toLowerCase() !== 'logout');
+  const hasLogout = navItems.some(item => item.toLowerCase() === 'logout');
+
   return (
-    <aside className="sidebar" style={style}>
-      <h2 className="sidebar-heading">My App</h2>
-      <nav className="sidebar-nav">
-        {navItems.map(({ label }, index) => (
+    <div
+      className="sidebar"
+      style={{
+        width,
+        left: position === 'left' ? 0 : 'auto',
+        right: position === 'right' ? 0 : 'auto',
+      }}
+    >
+      <div className="sidebar-heading">{heading}</div>
+
+      <div className="sidebar-nav">
+        {nonLogoutItems.map((item, index) => (
           <button
             key={index}
-            className={`sidebar-btn ${label.toLowerCase() === 'logout' ? 'logout-btn' : ''}`}
-            onClick={() => handleClick(label)}
+            className="sidebar-btn"
+            onClick={() => handleNavigation(`/${item.toLowerCase()}`)}
           >
-            {label}
+            {item}
           </button>
         ))}
-      </nav>
-    </aside>
+
+        {hasLogout && (
+          <button
+            className="sidebar-btn logout-btn"
+            onClick={() => handleNavigation('/logout')}
+          >
+            Logout
+          </button>
+        )}
+      </div>
+    </div>
   );
 };
 
 export default Sidebar;
-
-
