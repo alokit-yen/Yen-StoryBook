@@ -237,4 +237,77 @@ Use the Storybook controls panel to modify props interactively.
 * Add any required decorators (like `<BrowserRouter>`) in Storybook for routing.
 * Components use props and styles designed for flexibility and clarity.
 
-Happy Developing! ✨
+🌐 RajKamal Components Storybook Documentation
+This section documents the components authored under the RajKamal namespace:
+-> PopupModal
+-> Faq
+
+All components are interactive and customizable via Storybook controls.
+
+🪟 PopupModal Component
+A versatile modal component supporting general-purpose modals, FAQ forms, and profile viewers.
+
+| Prop                  | Type       | Description                                                          |
+| --------------------- | ---------- | -------------------------------------------------------------------- |
+| `title`               | `string`   | Title text displayed at the top of the modal                         |
+| `style`               | `object`   | Custom styles applied to the modal container                         |
+| `onSubmit`            | `function` | Callback triggered when modal is submitted or closed                 |
+| `questionPlaceholder` | `string`   | Placeholder for FAQ question input (only for FAQ modal)              |
+| `answerPlaceholder`   | `string`   | Placeholder for FAQ answer input (only for FAQ modal)                |
+| `showFAQ`             | `boolean`  | If `true`, renders FAQ form                                          |
+| `showProfile`         | `boolean`  | If `true`, renders profile details                                   |
+| `profileData`         | `object`   | Profile info: `{ image, name, email, phone, address }` (for profile) |
+
+Variants
+GeneralPurpose
+A basic modal with a title and onSubmit action.
+
+<PopupModal
+  title="General Purpose Modal"
+  style={{ backgroundColor: 'rgba(0,0,0,0.2)' }}
+  onSubmit={() => alert('General modal submitted.')}
+/>
+
+FAQModal
+Modal for creating or editing a FAQ entry.
+
+<PopupModal
+  title="Create a New FAQ"
+  style={{ backgroundColor: 'rgba(0,0,0,0.2)' }}
+  questionPlaceholder="Enter your FAQ question"
+  answerPlaceholder="Provide a helpful answer"
+  showFAQ={true}
+  onSubmit={(data) => console.log(data)}
+/>
+
+
+ProfileModal
+Displays user profile information in a modal layout.
+
+jsx
+Copy
+Edit
+<PopupModal
+  title="Profile Details"
+  style={{ backgroundColor: 'rgba(0,0,0,0.3)' }}
+  showProfile={true}
+  profileData={{
+    image: 'https://via.placeholder.com/100',
+    name: 'John Doe',
+    email: 'john@example.com',
+    phone: '+1-234-567-890',
+    address: '123, React Street, JS City, Webland',
+  }}
+  onSubmit={() => alert('Profile modal closed.')}
+/>
+
+💡 Use Case
+Use PopupModal for multi-purpose modal dialogs including confirmations, FAQ forms, or profile previews across applications.
+
+| Prop       | Type     | Description                                         |
+| ---------- | -------- | --------------------------------------------------- |
+| `question` | `string` | The FAQ question                                    |
+| `answer`   | `string` | The answer or explanation for the corresponding FAQ |
+
+
+
