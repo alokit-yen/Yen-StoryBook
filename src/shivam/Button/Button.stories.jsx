@@ -20,7 +20,7 @@ export default {
 export const Primary = () => (
   <div style={{ textAlign: 'center', marginTop: '2rem' }}>
     <Button variant="primary" onClick={() => alert('Primary button clicked!')}>
-      Primary Button
+      Primary
     </Button>
   </div>
 );
@@ -30,7 +30,7 @@ Primary.storyName = 'Primary';
 export const Outline = () => (
   <div style={{ textAlign: 'center', marginTop: '2rem' }}>
     <Button variant="outline" onClick={() => alert('Outline button clicked!')}>
-      Outline Button
+      Outline
     </Button>
   </div>
 );
@@ -40,7 +40,7 @@ Outline.storyName = 'Outline';
 export const Danger = () => (
   <div style={{ textAlign: 'center', marginTop: '2rem' }}>
     <Button variant="danger" onClick={() => alert('Danger button clicked!')}>
-      Danger Button
+      Log-Out
     </Button>
   </div>
 );
@@ -61,7 +61,7 @@ export const GreenRound = () => (
         fontWeight: '600',
       }}
     >
-      Round Button
+      Round Green 
     </Button>
   </div>
 );
