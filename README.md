@@ -241,6 +241,156 @@ Use the Storybook controls panel to modify props interactively.
 
 ---
 
+### 🌐 `SHIVAM` Components Storybook Documentation
+
+Developed by **Shivam**
+
+This README covers the following components:
+
+* `Button`
+* `SearchBar`
+* `ProgressBar`
+* `UserAuthentication`
+  - `SigninForm`
+  - `SignupForm`
+  - `ForgotPasswordForm`
+
+All components are built using React, styled with modular CSS, and documented via Storybook.
+
+---
+
+## 🔘 Button Component
+
+A reusable and styled Button component with multiple variants like Primary, Outline, Danger, and Custom (e.g., green pill-shaped).
+
+✅ Props
+
+| Prop       | Type       | Description                                      |
+|------------|------------|--------------------------------------------------|
+| `children` | `string`   | Text inside the button                           |
+| `variant`  | `string`   | One of `'primary'`, `'outline'`, `'danger'`      |
+| `onClick`  | `function` | Callback when button is clicked                  |
+| `style`    | `object`   | Inline styles (optional for custom styling)      |
+
+🧪 Variants
+
+- Primary: Blue styled button
+- Outline: Transparent with border
+- Danger: Red for delete/logout actions
+- Green Round: Pill-shaped with green background
+
+💡 Use Case
+
+Use the Button component for actions such as form submission, logout, modals, and primary user interactions.
+
+---
+
+## 🔍 SearchBar Component
+
+A customizable SearchBar component supporting various styles like Primary, Outline, Clearable, Rounded with Icon, and more.
+
+✅ Props
+
+| Prop        | Type       | Description                                    |
+|-------------|------------|------------------------------------------------|
+| `value`     | `string`   | The current input value                        |
+| `onChange`  | `function` | Called with updated value on each keystroke    |
+| `placeholder` | `string` | Placeholder text                               |
+| `variant`   | `string`   | `'primary'`, `'outline'`, or `'clearable'`     |
+| `onClear`   | `function` | Optional callback to clear the input (clearable variant) |
+
+🧪 Variants
+
+- Primary: Blue border and background
+- Outline: Minimal with gray border
+- Clearable: Includes × button to clear text
+- Rounded with Icon: Input styled with a search icon
+
+💡 Use Case
+
+Perfect for filters, navigation search, real-time search fields, and admin tables.
+
+---
+
+## 📊 ProgressBar Component
+
+A simple and animated progress bar that can reflect percentage visually and support color customization.
+
+✅ Props
+
+| Prop       | Type     | Description                      |
+|------------|----------|----------------------------------|
+| `progress` | `number` | A number between 0–100           |
+| `color`    | `string` | CSS color string (e.g., `#3b82f6`) |
+
+🧪 Variants
+
+- Default: 40% static blue progress
+- Animated: Automatically fills up to 100% in green
+- Move on Click: Interactive bar increasing 20% per click
+
+💡 Use Case
+
+Use for loaders, form completion, file upload progress, or async feedback.
+
+---
+
+## 👤 UserAuthentication Components
+
+Includes multiple form components for user account handling like login, registration, and password reset.
+
+---
+
+### 🔐 SigninForm
+
+A form for user login.
+
+✅ Props
+
+| Prop       | Type       | Description                                 |
+|------------|------------|---------------------------------------------|
+| `onSubmit` | `function` | Receives `{ username, password }`           |
+
+💡 Use Case
+
+Used on login pages or private route access control.
+
+---
+
+### 🆕 SignupForm
+
+A form to register new users.
+
+✅ Props
+
+| Prop       | Type       | Description                                 |
+|------------|------------|---------------------------------------------|
+| `onSubmit` | `function` | Receives `{ name, email, password }`        |
+
+💡 Use Case
+
+Perfect for user onboarding and account creation.
+
+---
+
+### 🔁 ForgotPasswordForm
+
+A form to let users reset their password via email.
+
+✅ Props
+
+| Prop       | Type       | Description                                 |
+|------------|------------|---------------------------------------------|
+| `onSubmit` | `function` | Called with `email` string on form submit   |
+
+💡 Use Case
+
+Use on "Forgot Password" pages to initiate recovery workflows.
+
+---
+
+
+
 ## ✅ Requirements
 
 * Ensure React and React Router are set up.
