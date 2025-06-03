@@ -25,13 +25,6 @@ export const Primary = () => (
   </div>
 );
 Primary.storyName = 'Primary';
-Primary.parameters = {
-  docs: {
-    description: {
-      story: 'The Primary button has a solid blue background and white text. Best for main actions.',
-    },
-  },
-};
 
 // 2. Outline Button
 export const Outline = () => (
@@ -42,13 +35,6 @@ export const Outline = () => (
   </div>
 );
 Outline.storyName = 'Outline';
-Outline.parameters = {
-  docs: {
-    description: {
-      story: 'The Outline button is transparent with a blue border and text. Good for secondary actions.',
-    },
-  },
-};
 
 // 3. Danger Button
 export const Danger = () => (
@@ -59,10 +45,31 @@ export const Danger = () => (
   </div>
 );
 Danger.storyName = 'Danger';
-Danger.parameters = {
+
+// 4. Green Round Button (Pill-shaped, Green)
+export const GreenRound = () => (
+  <div style={{ textAlign: 'center', marginTop: '2rem' }}>
+    <Button
+      onClick={() => alert('Green Round button clicked!')}
+      style={{
+        backgroundColor: '#10b981', // green background
+        color: '#fff',
+        borderRadius: '9999px',      // pill shape
+        padding: '0.5rem 1.5rem',
+        border: 'none',
+        cursor: 'pointer',
+        fontWeight: '600',
+      }}
+    >
+      Round Button
+    </Button>
+  </div>
+);
+GreenRound.storyName = 'Green Round';
+GreenRound.parameters = {
   docs: {
     description: {
-      story: 'The Danger button is red and should be used for destructive actions like Delete.',
+      story: 'A pill-shaped button with a green background.',
     },
   },
 };
