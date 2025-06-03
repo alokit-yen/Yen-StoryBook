@@ -71,3 +71,17 @@
 .modal button:hover {
   background-color: #0056b3;
 }
+
+.profile-modal {
+  text-align: left;
+  margin-bottom: 16px;
+}
+
+.profile-img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto 16px;
+}
