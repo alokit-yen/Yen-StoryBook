@@ -1,6 +1,16 @@
 ### 🌐 `ALOKIT` Components Storybook Documentation
 
-📦 1. Card Component
+This README covers the following components:
+
+* `Card`
+* `Carousel`
+* `Dropdown`
+* `INPUT`
+
+All components are built using React and styled with modular CSS, and can be previewed and controlled via Storybook.
+
+---
+ 📦 1. Card Component
 
 The Card component is a flexible container used for displaying grouped content like text, media, and actions.
 
@@ -133,7 +143,7 @@ Disabled Input: Prevents user interaction
 Used in forms, authentication flows, search bars, or admin interfaces.
 
 
-
+---
 
 ### 🌐 `Hiten` Components Storybook Documentation
 
