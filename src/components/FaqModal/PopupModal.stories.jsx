@@ -60,13 +60,13 @@ export const FAQModal = {
     docs: {
       source: {
         code: `<PopupModal
-  title="Create a New FAQ"
-  style={{ backgroundColor: 'rgba(0,0,0,0.2)' }}
-  questionPlaceholder="Enter your FAQ question"
-  answerPlaceholder="Provide a helpful answer"
-  showFAQ={true}
-  onSubmit={(data) => console.log(data)}
-/>`,
+           title="Create a New FAQ"
+           style={{ backgroundColor: 'rgba(0,0,0,0.2)' }}
+           questionPlaceholder="Enter your FAQ question"
+           answerPlaceholder="Provide a helpful answer"
+           showFAQ={true}
+           onSubmit={(data) => console.log(data)}
+        />`,
       },
     },
   },
@@ -79,9 +79,9 @@ export const ProfileModal = {
     style: { backgroundColor: 'rgba(0,0,0,0.3)' },
     showProfile: true,
     profileData: {
-      image: 'https://via.placeholder.com/100',
-      name: 'John Doe',
-      email: 'john@example.com',
+      image: 'https://cdn.wikimg.net/en/zeldawiki/images/f/fc/EoW_Link_Render.png',
+      name: 'Raj Kamal',
+      email: 'raj@gmail.com',
       phone: '+1-234-567-890',
       address: '123, React Street, JS City, Webland',
     },
@@ -92,17 +92,17 @@ export const ProfileModal = {
       source: {
         code: `<PopupModal
            title="Profile Details"
-  style={{ backgroundColor: 'rgba(0,0,0,0.3)' }}
-  showProfile={true}
-  profileData={{
-    image: 'https://via.placeholder.com/100',
-    name: 'John Doe',
-    email: 'john@example.com',
-    phone: '+1-234-567-890',
-    address: '123, React Street, JS City, Webland',
-  }}
-  onSubmit={() => alert('Profile modal closed.')}
-/>`,
+           style={{ backgroundColor: 'rgba(0,0,0,0.3)' }}
+           showProfile={true}
+           profileData={{
+              image: 'https://via.placeholder.com/100',
+              name: 'John Doe',
+              email: 'john@example.com',
+              phone: '+1-234-567-890',
+              address: '123, React Street, JS City, Webland',
+           }}
+           onSubmit={() => alert('Profile modal closed.')}
+        />`,
       },
     },
   },
