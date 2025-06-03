@@ -1,6 +1,16 @@
 ### 🌐 `ALOKIT` Components Storybook Documentation
 
-📦 1. Card Component
+This README covers the following components:
+
+* `Card`
+* `Carousel`
+* `Dropdown`
+* `INPUT`
+
+All components are built using React and styled with modular CSS, and can be previewed and controlled via Storybook.
+
+---
+ ## 📦 Card Component
 
 The Card component is a flexible container used for displaying grouped content like text, media, and actions.
 
@@ -30,9 +40,9 @@ Only Content: Displays only the content without a title or footer
 Use the Card component for dashboards, product previews, media blocks, or general-purpose containers in a layout.
 
 
+---
 
-
-🎠 2. Carousel Component
+## 🎠 Carousel Component
 
 The Carousel is a wrapper for a slick-slider-powered carousel, supporting various item types.
 
@@ -70,9 +80,9 @@ Testimonial:
 Ideal for image galleries, product showcases, user testimonials, or feature highlights.
 
 
+---
 
-
-🔽 3. Dropdown Component
+## 🔽 Dropdown Component
 
 A flexible dropdown component for single selection, with optional grouping and icons.
 
@@ -100,10 +110,10 @@ Grouped: Options grouped under category headers like "Fruits", "Vegetables"
 
 Perfect for filters, settings menus, user actions, or grouped selections in forms.
 
+---
 
 
-
-✏️ 4. Input Component
+## ✏️  Input Component
 
 A reusable text input field with labeling and internal state handling.
 
@@ -133,7 +143,7 @@ Disabled Input: Prevents user interaction
 Used in forms, authentication flows, search bars, or admin interfaces.
 
 
-
+---
 
 ### 🌐 `Hiten` Components Storybook Documentation
 
