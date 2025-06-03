@@ -49,12 +49,49 @@ export default function PopupModal({
         {showProfile && (
           <div className="profile-modal">
             <img src={profileData.image} alt="Profile" className="profile-img" />
-            <p><strong>Name:</strong> {profileData.name}</p>
-            <p><strong>Email:</strong> {profileData.email}</p>
-            <p><strong>Phone:</strong> {profileData.phone}</p>
-            <p><strong>Address:</strong> {profileData.address}</p>
+
+            <div className="modal-field">
+              <label htmlFor="name">Name:</label>
+              <input
+                id="name"
+                type="text"
+                value={profileData.name}
+                readOnly
+              />
+            </div>
+
+            <div className="modal-field">
+              <label htmlFor="email">Email:</label>
+              <input
+                id="email"
+                type="email"
+                value={profileData.email}
+                readOnly
+              />
+            </div>
+
+            <div className="modal-field">
+              <label htmlFor="phone">Phone:</label>
+              <input
+                id="phone"
+                type="tel"
+                value={profileData.phone}
+                readOnly
+              />
+            </div>
+
+            <div className="modal-field">
+              <label htmlFor="address">Address:</label>
+              <input
+                id="address"
+                type="text"
+                value={profileData.address}
+                readOnly
+              />
+            </div>
           </div>
         )}
+
 
         {!showFAQ && !showProfile && (
           <p style={{ textAlign: 'center', fontSize: '14px' }}>
