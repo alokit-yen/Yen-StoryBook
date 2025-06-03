@@ -1,3 +1,4 @@
+// ProgressBar.jsx
 import React from "react";
 import "./ProgressBar.css";
 
@@ -5,18 +6,19 @@ import "./ProgressBar.css";
  * Animated ProgressBar component.
  * @param {Object} props
  * @param {number} props.progress - Progress value (0-100)
+ * @param {string} [props.color] - Optional background color for progress bar
  */
-const ProgressBar = ({ progress = 0 }) => {
+const ProgressBar = ({ progress = 0, color }) => {
   return (
     <div className="progress-bar-container">
       <div
         className="progress-bar-fill"
         style={{
           width: `${progress}%`,
-          position: "relative", // Needed for ::after and ::before
+          background: color || undefined,
+          position: "relative",
         }}
       >
-        {/* Animated percentage text */}
         <span
           style={{
             position: "absolute",

@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
-import ProgressBar from './ProgressBar'; // default import
+// ProgressBar.stories.jsx
+import React, { useState, useEffect } from 'react';
+import ProgressBar from './ProgressBar';
 import './ProgressBar.css';
 
 export default {
@@ -9,43 +10,63 @@ export default {
   parameters: {
     docs: {
       description: {
-        component: 'A simple and animated progress bar component that displays percentage progress visually and as text.',
+        component:
+          'A simple and animated progress bar component that displays percentage progress visually and as text.',
       },
     },
   },
 };
 
-// 1. Default
+// 1. Default (Blue)
 export const Default = () => (
   <div style={{ maxWidth: 400, margin: '2rem auto' }}>
-    <ProgressBar progress={40} />
+    <ProgressBar progress={40} color="#3b82f6" />
   </div>
 );
 Default.storyName = 'Default';
 Default.parameters = {
   docs: {
     description: {
-      story: 'Static progress bar with 40% progress. No interactivity or animation logic from Storybook.',
+      story: 'Static progress bar with 40% progress and blue color.',
     },
   },
 };
 
-// 2. Animated (handled via CSS transitions)
-export const Animated = () => (
-  <div style={{ maxWidth: 400, margin: '2rem auto' }}>
-    <ProgressBar progress={75} />
-  </div>
-);
+// 2. Animated (Green)
+export const Animated = () => {
+  const [progress, setProgress] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setProgress((prev) => {
+        if (prev >= 100) {
+          clearInterval(interval);
+          return 100;
+        }
+        return prev + 1;
+      });
+    }, 100);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  return (
+    <div style={{ maxWidth: 400, margin: '2rem auto', textAlign: 'center' }}>
+      <ProgressBar progress={progress} color="#10b981" />
+      <p>{progress}%</p>
+    </div>
+  );
+};
 Animated.storyName = 'Animated';
 Animated.parameters = {
   docs: {
     description: {
-      story: 'Visually animated progress bar. The animation is handled entirely through CSS in `ProgressBar.css`.',
+      story: 'Automatically animated progress bar using green color.',
     },
   },
 };
 
-// 3. Move on Click
+// 3. Move on Click (Amber)
 export const MoveOnClick = () => {
   const [progress, setProgress] = useState(0);
 
@@ -55,7 +76,7 @@ export const MoveOnClick = () => {
 
   return (
     <div style={{ maxWidth: 400, margin: '2rem auto', textAlign: 'center' }}>
-      <ProgressBar progress={progress} />
+      <ProgressBar progress={progress} color="#f59e0b" />
       <button
         onClick={handleClick}
         style={{
@@ -77,8 +98,7 @@ MoveOnClick.storyName = 'Move on Click';
 MoveOnClick.parameters = {
   docs: {
     description: {
-      story:
-        'This interactive version updates the progress value by 20% on each click. Resets to 0% when it reaches 100%.',
+      story: 'Interactive progress bar with amber color.',
     },
   },
 };

@@ -1,4 +1,4 @@
-/* Container for the progress bar */
+/* ProgressBar.css */
 .progress-bar-container {
   width: 100%;
   height: 12px;
@@ -12,10 +12,9 @@
   overflow: hidden;
 }
 
-/* The animated fill of the progress bar */
 .progress-bar-fill {
   height: 100%;
-  background: linear-gradient(90deg, #3b82f6 0%, #6366f1 100%);
+  /* background is now dynamic via React props */
   box-shadow: 0 2px 8px rgba(59, 130, 246, 0.15);
   transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   border-radius: 0 0 8px 8px;
@@ -23,7 +22,6 @@
   overflow: visible;
 }
 
-/* Animated stripes to show ongoing progress */
 .progress-bar-fill::before {
   content: "";
   position: absolute;
@@ -33,8 +31,8 @@
   width: 100%;
   background: repeating-linear-gradient(
     135deg,
-    rgba(255,255,255,0.15) 0px,
-    rgba(255,255,255,0.15) 12px,
+    rgba(255, 255, 255, 0.15) 0px,
+    rgba(255, 255, 255, 0.15) 12px,
     transparent 12px,
     transparent 24px
   );
@@ -43,7 +41,6 @@
   border-radius: 0 0 8px 8px;
 }
 
-/* Optional: Add a subtle glow at the end of the bar */
 .progress-bar-fill::after {
   content: "";
   display: block;
